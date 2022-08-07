@@ -16,8 +16,8 @@ import java.util.Map;
         private final Map<String, Employee> employees = new HashMap<>();
 
 
-        public Employee addEmployee(String firstName, String lastName) {
-            Employee employee = new Employee(firstName, lastName);
+        public Employee addEmployee(String firstName, String lastName, double salary, int department) {
+            Employee employee = new Employee(firstName, lastName, salary, department);
             String key = getKey(firstName,lastName);
             if (employees.containsKey(key)) {
                 throw new EmployeeAlreadyAddedException();
@@ -31,7 +31,6 @@ import java.util.Map;
 
 
         public Employee findEmployee(String firstName, String lastName) {
-            Employee employee = new Employee(firstName, lastName);
             String key = getKey(firstName,lastName);
             if (!employees.containsKey(key)) {
                 throw new EmployeeNotFoundException();
@@ -40,7 +39,6 @@ import java.util.Map;
         }
 
         public Employee removeEmployee(String firstName, String lastName) {
-            Employee employee = new Employee(firstName, lastName);
             String key = getKey(firstName,lastName);
             if (!employees.containsKey(key)) {
                 throw new EmployeeNotFoundException();
@@ -55,4 +53,7 @@ import java.util.Map;
         private String getKey(String firstName, String lastName) {
             return firstName + lastName;
         }
+
+
+
 }

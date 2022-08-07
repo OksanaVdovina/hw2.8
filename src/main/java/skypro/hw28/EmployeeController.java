@@ -19,8 +19,10 @@ import java.util.List;
 
         @GetMapping("/add")
         public Employee add(@RequestParam("firstName") String firstName,
-                            @RequestParam("lastName") String lastName) {
-            return employeeService.addEmployee(firstName, lastName);
+                            @RequestParam("lastName") String lastName,
+                            @RequestParam("salary") double salary,
+                            @RequestParam("departmentId") int department) {
+            return employeeService.addEmployee(firstName, lastName, salary, department);
         }
 
         @GetMapping("/find")
