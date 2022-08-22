@@ -15,10 +15,15 @@ import java.util.Map;
         private static final int LIMIT = 10;
         private final Map<String, Employee> employees = new HashMap<>();
 
+        private final ValidatorService validatorService;
 
-        public Employee addEmployee(String firstName, String lastName, double salary, int department) {
-            Employee employee = new Employee(firstName, lastName, salary, department);
-            String key = getKey(firstName,lastName);
+    public EmployeeService(ValidatorService validatorService) {
+        this.validatorService = validatorService;
+    }
+
+    public Employee addEmployee(String firstName, String lastName, double salary, int department) {
+            Employee employee = validatorService.validateEmployee(firstName, lastName, salary, department);
+            String key = getKey(employee.getFirstName(),employee.getLastName());
             if (employees.containsKey(key)) {
                 throw new EmployeeAlreadyAddedException();
             }

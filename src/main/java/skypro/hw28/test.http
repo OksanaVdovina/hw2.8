@@ -13,3 +13,7 @@ GET http://localhost:8080/departments/all?departmentId=3
 GET http://localhost:8080/departments/min-salary?departmentId=3
 ###
 GET http://localhost:8080/departments/max-salary?departmentId=3
+###
+GET http://localhost:8080/employee/add?firstName=petR&lastName=iVanOv&departmentId=1&salary=70000
+###
+GET http://localhost:8080/employee
