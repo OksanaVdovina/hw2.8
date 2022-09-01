@@ -1,6 +1,7 @@
-package skypro.hw28;
+package skypro.hw28.service;
 
 import org.springframework.stereotype.Service;
+import skypro.hw28.Employee;
 import skypro.hw28.exceptions.EmployeeAlreadyAddedException;
 import skypro.hw28.exceptions.EmployeeNotFoundException;
 import skypro.hw28.exceptions.EmployeeStorageIsFullException;

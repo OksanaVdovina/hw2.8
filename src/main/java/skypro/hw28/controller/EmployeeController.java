@@ -1,9 +1,11 @@
-package skypro.hw28;
+package skypro.hw28.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import skypro.hw28.Employee;
+import skypro.hw28.service.EmployeeService;
 
 import java.util.List;
 
